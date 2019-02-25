@@ -5,6 +5,12 @@ a given domain's typosquatters.
 
 ## Run it
 
+### With docker hub
+
+```
+$ docker run --restart=always -p 8080:8080 -d -it samnissen/dnstwist-server
+```
+
 ### With docker
 
 ```
@@ -16,13 +22,13 @@ $ docker run --restart=always -p 8080:8080 -d -it dnstwist-server
 ### Or test it out locally
 
 ```
-$ rackup -p 3333
+$ rackup -p 8080
 ```
 
 ## How it works
 
 ```
-$ wget http://localhost:3333/maximumfun.org?callback=http%3A%2F%2Fyour.domain%2Fyour%2Fapi%2Fpath.json
+$ wget http://localhost:8080/maximumfun.org?callback=http%3A%2F%2Fyour.domain%2Fyour%2Fapi%2Fpath.json
 ```
 
 This will eventually post the results of the dnstwist scan of maximumfun.org
